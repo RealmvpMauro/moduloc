@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import java.util.List;
 
 
 @Entity
@@ -51,6 +53,9 @@ public class Estudiante {
     private Boolean doc_extr;
     private String doc_otro;
 
+    @OneToMany(mappedBy = "estudiante")
+    private List<Transaccion> transaccion;
+    
     public Long getId() {
         return id;
     }

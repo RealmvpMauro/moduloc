@@ -5,7 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Arancel {
@@ -20,6 +22,9 @@ public class Arancel {
     private Date arc_fini;
     private Date arc_fexp;
 
+    @OneToMany(mappedBy = "arancel")
+    private List<Transaccion> transacciones;
+    
     public Long getId() {
         return id;
     }
