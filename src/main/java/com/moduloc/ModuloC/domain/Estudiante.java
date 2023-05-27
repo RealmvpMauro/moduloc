@@ -53,9 +53,6 @@ public class Estudiante {
     private Boolean doc_extr;
     private String doc_otro;
 
-    @OneToMany(mappedBy = "estudiante")
-    private List<Transaccion> transaccion;
-    
     public Long getId() {
         return id;
     }
